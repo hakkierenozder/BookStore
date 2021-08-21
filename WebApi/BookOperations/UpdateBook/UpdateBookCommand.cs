@@ -19,7 +19,7 @@ namespace WebApi.BookOperations.UpdateBook
         var book = _context.Books.SingleOrDefault(x=>x.Id == Id);
         if(book is null)
         {
-            throw new InvalidOperationException("Kitap ");
+            throw new InvalidOperationException("Kitap bulunamadı.");
         }
         book.GenreId = Model.GenreId != default ?Model.GenreId : book.GenreId;
         book.PageCount = Model.PageCount !=default ? Model.PageCount : book.PageCount;
